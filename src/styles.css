@@ -10,8 +10,9 @@
   --soft-muted: #83817c;
   --paper: #fbfaf7;
   --line: rgba(45, 43, 39, 0.17);
-  --coral: #d94a3e;
-  --link: #174ac4;
+  --orange: #c7651d;
+  --blue: #174ac4;
+  --link: var(--blue);
   --serif: "Playfair Display", Georgia, "Times New Roman", serif;
   --sans: "DM Sans", "Avenir Next", Avenir, sans-serif;
   --page-width: 1120px;
@@ -83,9 +84,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(23, 74, 196, 0.4
   text-decoration: none;
   transition: color 160ms ease;
 }
-.site-nav a:hover { color: var(--coral); }
+.site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--blue); }
+.site-nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--orange); text-decoration-thickness: 2px; text-underline-offset: 7px; }
 .site-nav .nav-contact { margin-left: 5px; padding-left: 26px; border-left: 1px solid var(--line); }
-.nav-contact span { color: var(--coral); }
+.nav-contact span { color: var(--orange); }
 .menu-toggle { display: none; }
 
 .hero {
@@ -107,7 +109,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(23, 74, 196, 0.4
   line-height: 1.5;
   text-transform: uppercase;
 }
-.eyebrow.accent { color: var(--coral); }
+.eyebrow.accent { color: var(--orange); }
 
 .hero h1 {
   margin: 0;
@@ -117,7 +119,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(23, 74, 196, 0.4
   letter-spacing: -0.055em;
   line-height: 0.99;
 }
-.hero h1 em { color: var(--coral); font-style: normal; }
+.hero h1 em { color: var(--blue); font-style: normal; }
 .hero-lede {
   max-width: 700px;
   margin: 30px 0 15px;
@@ -139,8 +141,21 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(23, 74, 196, 0.4
 }
 .note-kicker, .note-small { color: var(--soft-muted); font-size: 11px; letter-spacing: 0.08em; line-height: 1.5; text-transform: uppercase; }
 .hero-note p { margin: 24px 0 18px; font-family: var(--serif); font-size: 30px; font-weight: 600; line-height: 1.2; }
-.hero-note p span { color: var(--coral); font-style: italic; font-weight: 500; }
-.note-rule { display: block; width: 54px; height: 2px; margin-bottom: 16px; background-color: var(--coral); transform: rotate(-6deg); transform-origin: left center; }
+.hero-note p span { color: var(--orange); font-style: italic; font-weight: 500; }
+.note-rule { display: block; width: 54px; height: 2px; margin-bottom: 16px; background-color: var(--orange); transform: rotate(-6deg); transform-origin: left center; }
+
+.page-intro { padding-block: 58px 8px; }
+.page-intro .eyebrow { margin-bottom: 10px; }
+.page-intro > p:last-child { margin: 0; color: var(--muted); font-family: var(--serif); font-size: clamp(17px, 2vw, 22px); line-height: 1.5; }
+.home-next { padding-block: 36px 54px; border-top: 1px solid var(--line); }
+.home-next .eyebrow { margin-bottom: 9px; }
+.home-next > p:last-child { margin: 0; color: var(--muted); font-family: var(--serif); font-size: 18px; line-height: 1.6; }
+.content-section { min-height: 460px; padding-block: 42px 80px; }
+.editorial-empty { max-width: 660px; padding-block: 12px 30px; }
+.editorial-empty .eyebrow { margin-bottom: 11px; }
+.editorial-empty h2 { margin: 0; font-family: var(--serif); font-size: clamp(28px, 3.3vw, 42px); letter-spacing: -0.04em; line-height: 1.16; }
+.editorial-empty > p:not(.eyebrow) { max-width: 540px; margin: 16px 0; color: var(--muted); font-size: 14px; line-height: 1.75; }
+.editorial-empty > a { font-size: 13px; font-weight: 600; text-decoration: none; }
 
 .section {
   display: grid;
@@ -151,7 +166,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(23, 74, 196, 0.4
   scroll-margin-top: 85px;
 }
 .section-label { padding-top: 4px; color: var(--soft-muted); }
-.section-label > span { color: var(--coral); font-size: 13px; font-variant-numeric: tabular-nums; }
+.section-label > span { color: var(--orange); font-size: 13px; font-variant-numeric: tabular-nums; }
 .section-label p { margin: 9px 0 0; font-family: var(--serif); font-size: 20px; font-style: italic; }
 .section-main { min-width: 0; }
 .section h2, .contact-section h2 {
@@ -195,7 +210,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(23, 74, 196, 0.4
   padding: 22px 0;
   border-bottom: 1px solid rgba(45, 43, 39, 0.13);
 }
-.impact-number { color: var(--coral); font-family: var(--serif); font-size: clamp(34px, 4vw, 52px); font-weight: 600; letter-spacing: -0.055em; line-height: 1; }
+.impact-number { color: var(--orange); font-family: var(--serif); font-size: clamp(34px, 4vw, 52px); font-weight: 600; letter-spacing: -0.055em; line-height: 1; }
 .impact-row h3 { margin: 0 0 7px; font-family: var(--serif); font-size: 19px; font-weight: 600; }
 .impact-row p { max-width: 620px; margin: 0; color: var(--muted); font-size: 13px; line-height: 1.65; }
 
@@ -205,7 +220,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(23, 74, 196, 0.4
 .project-copy h3 { margin: 0 0 8px; font-family: var(--serif); font-size: 20px; font-weight: 600; letter-spacing: -0.02em; }
 .project-copy p { max-width: 720px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 .project-link { display: inline-block; margin-top: 10px; font-size: 12px; font-weight: 600; text-decoration: none; }
-.project-arrow { color: var(--coral); font-size: 18px; }
+.project-arrow { color: var(--orange); font-size: 18px; }
 
 .learning-grid, .more-grid { display: grid; grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1fr); gap: clamp(35px, 7vw, 96px); align-items: start; }
 .learning-grid h2, .more-grid h2 { margin-top: 10px; }
@@ -215,7 +230,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid rgba(23, 74, 196, 0.4
 .learning-details h3 { margin: 0 0 10px; font-family: var(--serif); font-size: 17px; }
 .course-list { columns: 2; column-gap: 34px; margin: 0; padding-left: 18px; color: var(--muted); font-size: 13px; line-height: 1.65; }
 .course-list li { break-inside: avoid; margin-bottom: 8px; padding-left: 3px; }
-.course-list li::marker { color: var(--coral); }
+.course-list li::marker { color: var(--orange); }
 
 .more-list { border-top: 1px solid rgba(45, 43, 39, 0.13); }
 .more-list p { margin: 0; padding: 15px 0; border-bottom: 1px solid rgba(45, 43, 39, 0.13); }
