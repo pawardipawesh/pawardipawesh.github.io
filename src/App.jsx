@@ -85,7 +85,23 @@ function PapersPage() {
 }
 
 function BlogsPage() {
-  return <Section number="01" title="Blogs" className="content-section"><div className="editorial-empty"><p className="eyebrow accent">Notes from the work</p><h2>Ideas, explained clearly.</h2><p>I write about applied AI, data science, and building useful products. New articles will appear here as they’re published.</p><a href="https://www.linkedin.com/in/dipaweshpawar" target="_blank" rel="noreferrer">Follow along on LinkedIn <span aria-hidden="true">↗</span></a></div></Section>;
+  return <Section number="01" title="Blogs" className="content-section">
+    <div className="editorial-empty"><p className="eyebrow accent">Notes from the work</p><h2>Ideas, explained clearly.</h2><p>I write about applied AI, data science, and building useful products. New articles will appear here as they’re published.</p><a href="https://www.linkedin.com/in/dipaweshpawar" target="_blank" rel="noreferrer">Follow along on LinkedIn <span aria-hidden="true">↗</span></a></div>
+    <div className="reading-list">
+      <p className="eyebrow accent">Recommended reading</p>
+      <ol className="project-list">
+        <li className="project-row">
+          <span className="project-number">01</span>
+          <div className="project-copy">
+            <h3>Relational Deep Learning</h3>
+            <p>Explains how graph neural networks can learn from the relationships and time structure already present across database tables, reducing reliance on flattening data and manually engineering features. It also introduces RelBench, a benchmark for evaluating relational learning methods.</p>
+            <ExternalLink href="https://docs.nvidia.com/sdgm/research/concepts-models/relational-deep-learning" className="project-link">Read on NVIDIA</ExternalLink>
+          </div>
+          <span className="project-arrow" aria-hidden="true">↗</span>
+        </li>
+      </ol>
+    </div>
+  </Section>;
 }
 
 function ContactPage() {
